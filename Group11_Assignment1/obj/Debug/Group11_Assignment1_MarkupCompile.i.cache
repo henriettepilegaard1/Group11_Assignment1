@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\henri\OneDrive - Aarhus universitet\GUI\Assignment1\Group11_Assignment1\obj\Debug\
+C:\Users\carol\Source\Repos\henriettepilegaard1\Group11_Assignment1\Group11_Assignment1\obj\Debug\
 Group11_Assignment1
 none
 false
 DEBUG;TRACE
-C:\Users\henri\OneDrive - Aarhus universitet\GUI\Assignment1\Group11_Assignment1\App.xaml
-21953846670
+C:\Users\carol\Source\Repos\henriettepilegaard1\Group11_Assignment1\Group11_Assignment1\App.xaml
+31096287828
 
-7957704682
+11422749915
 131569487696
-debitorsCreditors.xaml;registeredDebits.xaml;
+AddDepter.xaml;debitorsCreditors.xaml;registeredDebits.xaml;
 
-False
+True
 
