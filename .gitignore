@@ -345,4 +345,5 @@ ASALocalRun/
 Network Trash Folder
 Temporary Items
 .apdisk
-Group11_Assignment1/obj/Debug/debitorsCreditors.g.i.cs
+*.cache
+
