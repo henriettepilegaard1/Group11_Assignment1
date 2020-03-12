@@ -12,9 +12,16 @@
             <ColumnDefinition Width="94*"/>
             <ColumnDefinition Width="623*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Add" Grid.Column="2" HorizontalAlignment="Left" Margin="428.111,122,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="addButton"
+            Content="Add"
+            Click="add_Click" 
+            Margin="376.111,99,143.556,288.667" 
+            MouseDown="addStart_MouseDown" 
+            Grid.Column="2">
+        </Button>
         <TextBlock HorizontalAlignment="Left" Margin="38,41,0,0" TextWrapping="Wrap" Text="Depters" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <ListBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="296" Margin="38,83,0,0" VerticalAlignment="Top" Width="278"/>
+
 
     </Grid>
 </Window>
