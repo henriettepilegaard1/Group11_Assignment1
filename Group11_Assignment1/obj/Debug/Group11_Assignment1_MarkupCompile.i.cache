@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
-C:\Users\carol\OneDrive\Documents\Group11_Assignment1\Group11_Assignment1\obj\Debug\
-=======
-C:\Users\carol\Source\Repos\henriettepilegaard1\Group11_Assignment1\Group11_Assignment1\obj\Debug\
->>>>>>> cca770c80a8932f93ba53dfc70b5e06f7c98a92b
+C:\Users\henri\Git\Group11_Assignment1\Group11_Assignment1\obj\Debug\
 Group11_Assignment1
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\carol\OneDrive\Documents\Group11_Assignment1\Group11_Assignment1\App.xaml
-3-1384819063
-
-11-1592495926
-131569487696
-addDeptors.xaml;debitorsCreditors.xaml;registeredDebits.xaml;
-=======
-C:\Users\carol\Source\Repos\henriettepilegaard1\Group11_Assignment1\Group11_Assignment1\App.xaml
+C:\Users\henri\Git\Group11_Assignment1\Group11_Assignment1\App.xaml
 31096287828
 
-11422749915
+8-503925709
 131569487696
 AddDepter.xaml;debitorsCreditors.xaml;registeredDebits.xaml;
->>>>>>> cca770c80a8932f93ba53dfc70b5e06f7c98a92b
 
 True
 
