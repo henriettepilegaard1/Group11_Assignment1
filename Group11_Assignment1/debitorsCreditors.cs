@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace Group11_Assignment1
 {
     /// <summary>
-    /// Interaction logic for DebitorsCreditors.xaml
+    /// Interaction logic for DebitorsCreditorsView.xaml
     /// </summary>
-    public partial class DebitorsCreditors : System.Windows.Window
+    public partial class DebitorsCreditorsView : System.Windows.Window
 
     {
-        public DebitorsCreditors()
+        public DebitorsCreditorsView()
         {
             InitializeComponent();
         }
