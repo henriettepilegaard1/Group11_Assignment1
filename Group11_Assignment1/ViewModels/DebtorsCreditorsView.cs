@@ -56,6 +56,43 @@ namespace Group11_Assignment1.ViewModels
                 SetProperty(ref debtersCreditors, value);
             }
         }
+
+        public bool IsTrue
+        {
+            get
+            {
+                bool isTrue = true;
+                if (string.IsNullOrWhiteSpace(CurrentDebtersCreditors.Name))
+                    isTrue = false;
+                if (Double.IsNaN(CurrentDebtersCreditors.Amount))
+                    isTrue = false;
+                return isTrue; 
+            }
+        }
         #endregion Properties
+
+        #region Commands
+        ICommand cancelBtnCommand;
+        public ICommand CancelBtnCommand
+        {
+            get
+            {
+                return cancelBtnCommand ?? (cancelBtnCommand = new DelegateCommand(
+                   CancelBtnCommand_Execute, CancelBtnCommand_CanExecute)
+                  .ObservesProperty(() => CurrentDebtersCreditors.Name)
+                  .ObservesProperty(() => CurrentDebtersCreditors.Amount));
+            }
+        }
+
+        private void CancelBtnCommand_Execute()
+        {
+            // Can be left empty
+        }
+
+        private bool CancelBtnCommand_CanExecute()
+        {
+            return IsTrue;
+        }
+        #endregion Commands
     }
 }
