@@ -24,8 +24,6 @@ namespace Group11_Assignment1
         public debitorsCreditors()
         {
             InitializeComponent();
-            
-
         }
 
         private void add_Click(object sender, RoutedEventArgs e)
