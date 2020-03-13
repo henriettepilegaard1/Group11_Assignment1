@@ -18,9 +18,9 @@ namespace Group11_Assignment1
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class debitorsCreditors : Window
     {
-        public MainWindow()
+        public debitorsCreditors()
         {
             InitializeComponent();
         }
