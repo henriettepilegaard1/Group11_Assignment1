@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Group11_Assignment1
 {
     /// <summary>
-    /// Interaction logic for DebitorsCreditors.xaml
+    /// Interaction logic for AddDepter.xaml
     /// </summary>
-    public partial class DebitorsCreditors : System.Windows.Window
-
+    public partial class AddDepter : Window
     {
-        public DebitorsCreditors()
+        public AddDepter()
         {
             InitializeComponent();
-        }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-            AddDepter addWindow = new AddDepter();
-            addWindow.Show();
         }
     }
 }
