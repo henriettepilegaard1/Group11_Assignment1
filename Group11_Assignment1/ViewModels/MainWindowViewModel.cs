@@ -1,4 +1,6 @@
-﻿using Microsoft.Win32;
+﻿using Group11_Assignment1.Models;
+using Group11_Assignment1.ViewModels;
+using Microsoft.Win32;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
@@ -12,38 +14,92 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using Group11_Assignment1.Models;
 
 namespace Group11_Assignment1
 {
     public class MainWindowViewModel : BindableBase
     {
-        private ObservableCollection<DebtersCreditors> debtersCreditors;
-        private readonly string AppTitle = "The Dept Book";
+        private ObservableCollection<DebitersCreditors> debitersCreditors;
 
 
         public MainWindowViewModel()
         {
-            debtersCreditors = new ObservableCollection<DebtersCreditors>
+            debitersCreditors = new ObservableCollection<DebitersCreditors>
             {
-                new DebtersCreditors("Lucas", 500),
-                new DebtersCreditors("Caroline", -240)
+
+                new DebitersCreditors("Lucas", -500),
+                new DebitersCreditors("Caroline", 240)
             };
-            CurentDebtersCreditors = null;
+            CurentDebitersCreditors = null;
+
+            IsDebiterOrCreditor = new ObservableCollection<string>
+            {
+                "Is a debitor",
+                "Is a creditor"
+            };
+        }
+       
+        #region Properties
+        public ObservableCollection<DebitersCreditors> Debiters
+        {
+            get { return debitersCreditors; }
+            set { SetProperty(ref debitersCreditors, value); }
         }
 
+        DebitersCreditors curentDebitersCreditors = null;
 
-        DebtersCreditors curentDebtersCreditors;
-        
-        
-
-        public DebtersCreditors CurentDebtersCreditors
+        public DebitersCreditors CurentDebitersCreditors
         {
-            get { return CurentDebtersCreditors; }
+            get 
+            { 
+                return CurentDebitersCreditors; 
+            }
             set
             {
-                SetProperty(ref curentDebtersCreditors, value);
+                SetProperty(ref curentDebitersCreditors, value);
             }
         }
+
+        ObservableCollection<string> isDebiterOrCreditor;
+        public ObservableCollection<string> IsDebiterOrCreditor
+        {
+            get { return isDebiterOrCreditor; }
+            set
+            {
+                SetProperty(ref isDebiterOrCreditor, value);
+            }
+        }
+
+        #endregion
+
+        #region commands
+        ICommand newDebitersCreditorsCommand;
+        public ICommand AddDebitersCreditorsCommand
+        {
+
+            get
+            {
+                return newDebitersCreditorsCommand ?? (newDebitersCreditorsCommand = new DelegateCommand(() =>
+                {
+                 var newDebitersCreditors = new DebitersCreditors();
+                    var debitersCreditersView = new DebtorsCreditorsView(DateTime.Now, "amount", newDebitersCreditors)
+                    {
+                        IsDebiterOrCreditor = isDebiterOrCreditor                
+                    };
+
+                 var dlg = new DebitersWindow
+                    {
+                        DataContext = debitersCreditersView
+                    };
+                if (dlg.ShowDialog() == true)
+                {
+                    Debiters.Add(newDebitersCreditors);
+                    CurentDebitersCreditors = newDebitersCreditors;
+                }
+            }));
+            }
+        }
+
+        #endregion
     }
 }

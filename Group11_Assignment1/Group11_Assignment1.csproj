@@ -76,17 +76,24 @@
     <Compile Include="AddDepter.xaml.cs">
       <DependentUpon>AddDepter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\DebtersCreditors.cs" />
+    <Compile Include="Views\DebitersWindow.xaml.cs">
+      <DependentUpon>DebitersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DebitersCreditors.cs" />
     <Compile Include="ViewModels\DebtorsCreditorsView.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="registeredDebits.xaml.cs">
+    <Compile Include="Views\registeredDebits.xaml.cs">
       <DependentUpon>registeredDebits.xaml</DependentUpon>
     </Compile>
     <Page Include="AddDepter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DebitorsCreditorsWindow.xaml">
+    <Page Include="Views\DebitersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DebitorsCreditorsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -94,11 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="debitorsCreditors.cs">
-      <DependentUpon>DebitorsCreditorsWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="registeredDebits.xaml">
+    <Page Include="Views\registeredDebits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,5 +133,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

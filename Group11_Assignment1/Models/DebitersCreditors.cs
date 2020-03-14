@@ -8,20 +8,24 @@ using Prism.Mvvm;
 
 namespace Group11_Assignment1.Models
 {
-    public class DebtersCreditors : BindableBase
+    public class DebitersCreditors : BindableBase
     {
         private string name;
-        private Double amount;
+        private string amount;
         
-        public DebtersCreditors(string name, double amount)
+        public DebitersCreditors(string name, string amount)
         {
             name = this.name;
             amount = this.amount;
         }
 
-        public DebtersCreditors Clone()
+        public DebitersCreditors()
         {
-            return this.MemberwiseClone() as DebtersCreditors;
+        }
+
+        public DebitersCreditors Clone()
+        {
+            return this.MemberwiseClone() as DebitersCreditors;
         }
 
         public string Name
@@ -36,7 +40,7 @@ namespace Group11_Assignment1.Models
             }
         }
 
-        public double Amount
+        public string Amount
         {
             get
             {
