@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="Add deptor" Height="250" Width="350">
     <Grid>
-        <Label Name="LabelName" Content="Name" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="80,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Name="LabelAmount" Content="Amount" HorizontalAlignment="Left" Margin="18,51,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="TextBoxAmount" HorizontalAlignment="Left" Height="23" Margin="80,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Name="ButtonSave" Content="Cancel" HorizontalAlignment="Left" Margin="18,100,0,0" VerticalAlignment="Top" Width="80"/>
-        <Button Name="ButtonCancel" Content="Save" HorizontalAlignment="Left" Margin="120,100,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Name="LabelName" Content="Name" HorizontalAlignment="Left" Margin="18,20,0,0" VerticalAlignment="Top" Foreground="#DD433D3D"/>
+        <TextBox Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="80,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" BorderBrush="#89433A3A" Foreground="#FFA69A9A" SelectionBrush="Black" Background="#FFCDCBCB"/>
+        <Label Name="LabelAmount" Content="Amount" HorizontalAlignment="Left" Margin="18,51,0,0" VerticalAlignment="Top" Foreground="#DD433D3D"/>
+        <TextBox Name="TextBoxAmount" HorizontalAlignment="Left" Height="23" Margin="80,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" BorderBrush="#89433A3A"  Foreground="#FFA69A9A" SelectionBrush="Black"/>
+        <Button Name="ButtonSave" Content="Cancel" HorizontalAlignment="Left" Margin="80,163,0,25.667" Width="90" Foreground="Black" Background="#FF928A8A" FontFamily="Yu Gothic Medium" FontSize="12" Height="Auto"/>
+        <Button Name="ButtonCancel" Content="Save" Margin="189,163,64.333,25.667" Background="#FF928A8A" FontFamily="Yu Gothic Medium" FontSize="12" Height="Auto"/>
     </Grid>
 </Window>

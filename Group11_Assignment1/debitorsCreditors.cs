@@ -31,5 +31,10 @@ namespace Group11_Assignment1
             AddDepter addWindow = new AddDepter();
             addWindow.Show();
         }
+
+        private void DeptersListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
