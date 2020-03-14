@@ -23,5 +23,10 @@ namespace Group11_Assignment1
         {
             InitializeComponent();
         }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
     }
 }
