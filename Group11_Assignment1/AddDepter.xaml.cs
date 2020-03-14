@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Group11_Assignment1
 {
     /// <summary>
-    /// Interaction logic for AddDepter.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class AddDepter : Window
+    public partial class debitorsCreditors : Window
     {
-        public AddDepter()
+        public debitorsCreditors()
         {
             InitializeComponent();
         }
