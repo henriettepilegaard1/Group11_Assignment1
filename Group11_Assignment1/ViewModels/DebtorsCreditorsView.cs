@@ -66,7 +66,7 @@ namespace Group11_Assignment1.ViewModels
                 bool isTrue = true;
                 if (string.IsNullOrWhiteSpace(CurrentDebtersCreditors.Name))
                     isTrue = false;
-                if (string.IsNullOrWhiteSpace(CurrentDebtersCreditors.Amount))
+                if (Double.IsNaN(CurrentDebtersCreditors.Amount))
                     isTrue = false;
                 return isTrue; 
             }
@@ -85,9 +85,9 @@ namespace Group11_Assignment1.ViewModels
 
         #region Commands
         ICommand cancelBtnCommand;
-        private DateTime now;
-        private string v;
-        private DebitersCreditors newDebitersCreditors;
+        //private DateTime now;
+        //private string v;
+        //private DebitersCreditors newDebitersCreditors;
 
         public ICommand CancelBtnCommand
         {

@@ -27,8 +27,8 @@ namespace Group11_Assignment1
             debitersCreditors = new ObservableCollection<DebitersCreditors>
             {
 
-                new DebitersCreditors("Lucas", "500"),
-                new DebitersCreditors("Caroline", "500")
+                new DebitersCreditors("Lucas", 500),
+                new DebitersCreditors("Caroline", 300)
             };
             CurentDebitersCreditors = null;
 
