@@ -8,18 +8,22 @@ using System.Windows.Input;
 
 namespace Group11_Assignment1.ViewModels 
 {
-    class PersonViewModel : BindableBase
+    public class PersonViewModel : BindableBase
     {
         private Person person;
         private String amount;
 
-
-        public PersonViewModel()
+        public PersonViewModel(Person person, String amount)
         {
+            this.person = person;
+            this.amount = amount;
+
             AddTransActionCommand = new DelegateCommand(AddTransActionCommand_Execute, AddTransActionCommand_CanExecute)
                 .ObservesProperty(() => Amount)
                 .ObservesProperty(() => Person);
         }
+
+        public PersonViewModel() : this(new Person(), String.Empty) { }
 
         #region Properties
 
@@ -30,6 +34,9 @@ namespace Group11_Assignment1.ViewModels
             get => person;
             set => SetProperty(ref person, value);
         }
+
+        public String Name => person.Name;
+        public double TotalAmount => person.Amount;
 
         public String Amount
         {
@@ -108,5 +115,15 @@ namespace Group11_Assignment1.ViewModels
             return IsValidPerson;
         }
         #endregion Commands
+    }
+
+    public class PersonViewModelDesign : PersonViewModel
+    {
+        public PersonViewModelDesign() : base(new Person { Amount = 0, Name = "Demo" }, "123")
+        {
+            Person.AddTransaction(new Transaction { Amount = 10, Date = DateTime.Now.AddDays(-10) });
+            Person.AddTransaction(new Transaction { Amount = -300, Date = DateTime.Now.AddDays(-5) });
+            Person.AddTransaction(new Transaction { Amount = 250, Date = DateTime.Now });
+        }
     }
 }

@@ -27,8 +27,8 @@ namespace Group11_Assignment1
             debitersCreditors = new ObservableCollection<Person>
             {
 
-                new Person("Lucas", 500),
-                new Person("Caroline", 300)
+                new Person(),
+                new Person()
             };
             CurentDebitersCreditors = null;
 
@@ -82,12 +82,12 @@ namespace Group11_Assignment1
                 return newDebitersCreditorsCommand ?? (newDebitersCreditorsCommand = new DelegateCommand(() =>
                 {
                  var newDebitersCreditors = new Person();
-                    var debitersCreditersView = new PersonViewModel(DateTime.Now, 0, newDebitersCreditors)
+                    var debitersCreditersView = new PersonViewModel()
                     {
-                        IsDebiterOrCreditor = isDebiterOrCreditor                
+                                 
                     };
 
-                 var dlg = new DebitersWindow
+                 var dlg = new MainWindow()
                     {
                         DataContext = debitersCreditersView
                     };

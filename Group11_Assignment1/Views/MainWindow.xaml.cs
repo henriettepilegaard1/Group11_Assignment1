@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Group11_Assignment1
 {
     /// <summary>
-    /// Interaction logic for DebitersWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class DebitersWindow : Window
+    public partial class MainWindow : Window
     {
-        public DebitersWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }
