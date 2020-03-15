@@ -11,9 +11,9 @@ namespace Group11_Assignment1.Models
     public class DebitersCreditors : BindableBase
     {
         private string name;
-        private string amount;
+        private Double amount;
         
-        public DebitersCreditors(string name, string amount)
+        public DebitersCreditors(string name, Double amount)
         {
             name = this.name;
             amount = this.amount;
@@ -40,7 +40,7 @@ namespace Group11_Assignment1.Models
             }
         }
 
-        public string Amount
+        public Double Amount
         {
             get
             {
