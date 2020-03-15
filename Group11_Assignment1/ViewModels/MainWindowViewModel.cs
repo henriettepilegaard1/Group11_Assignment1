@@ -82,7 +82,7 @@ namespace Group11_Assignment1
                 return newDebitersCreditorsCommand ?? (newDebitersCreditorsCommand = new DelegateCommand(() =>
                 {
                  var newDebitersCreditors = new DebitersCreditors();
-                    var debitersCreditersView = new DebtorsCreditorsView(DateTime.Now, "amount", newDebitersCreditors)
+                    var debitersCreditersView = new DebtorsCreditorsViewModel(DateTime.Now, 0, newDebitersCreditors)
                     {
                         IsDebiterOrCreditor = isDebiterOrCreditor                
                     };
@@ -96,7 +96,7 @@ namespace Group11_Assignment1
                     Debiters.Add(newDebitersCreditors);
                     CurentDebitersCreditors = newDebitersCreditors;
                 }
-            }));
+                }));
             }
         }
 
