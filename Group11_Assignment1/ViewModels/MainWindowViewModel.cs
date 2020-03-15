@@ -113,8 +113,6 @@ namespace Group11_Assignment1.ViewModels
             person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-3), Amount = -50 });
             person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-1), Amount = 12 });
             Persons.Add(person);
-
-
         }
     }
 }
