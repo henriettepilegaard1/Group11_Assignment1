@@ -15,7 +15,12 @@
         <!-- Transactions View -->
         <Label Content="Transactions for" HorizontalAlignment="Left" Margin="33,34,0,0" VerticalAlignment="Top" Background="White" Foreground="#DD242424" Width="104"/>
         <Label Content="{Binding Name}" HorizontalAlignment="Left" Margin="155,34,0,0" VerticalAlignment="Top"  Background="White" Foreground="#DD242424" Width="136" Height="24"/>
-        <DataGrid ItemsSource="{Binding Path=Transactions}" BorderBrush="Black" BorderThickness="2" GridLinesVisibility="All" HorizontalAlignment="Left" Height="319" Margin="33,92,0,0" VerticalAlignment="Top" Width="332" Background="White" Foreground="#DD242424" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" RenderTransformOrigin="0.496,0.31"/>
+        <DataGrid HeadersVisibility="Column" Background="White" Foreground="#DD242424" ItemsSource="{Binding Path=Transactions}" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="2" GridLinesVisibility="All" HorizontalAlignment="Left" Height="319" Margin="33,86,0,0" VerticalAlignment="Top" Width="332" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Simple Value" Binding="{Binding Date}" Width="*" />
+                <DataGridTextColumn Header="Flaf" Binding="{Binding Amount}" Width="*" />               
+            </DataGrid.Columns>
+        </DataGrid>
 
         <!-- Total amount-->
         <Label Content="Total amount:" HorizontalAlignment="Left" Margin="378,181,0,0" VerticalAlignment="Top" Width="91" Background="White" Foreground="#DD242424"/>
