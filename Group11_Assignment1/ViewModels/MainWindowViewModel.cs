@@ -19,16 +19,16 @@ namespace Group11_Assignment1
 {
     public class MainWindowViewModel : BindableBase
     {
-        private ObservableCollection<DebitersCreditors> debitersCreditors;
+        private ObservableCollection<Person> debitersCreditors;
 
 
         public MainWindowViewModel()
         {
-            debitersCreditors = new ObservableCollection<DebitersCreditors>
+            debitersCreditors = new ObservableCollection<Person>
             {
 
-                new DebitersCreditors("Lucas", 500),
-                new DebitersCreditors("Caroline", 300)
+                new Person("Lucas", 500),
+                new Person("Caroline", 300)
             };
             CurentDebitersCreditors = null;
 
@@ -40,15 +40,15 @@ namespace Group11_Assignment1
         }
        
         #region Properties
-        public ObservableCollection<DebitersCreditors> Debiters
+        public ObservableCollection<Person> Debiters
         {
             get { return debitersCreditors; }
             set { SetProperty(ref debitersCreditors, value); }
         }
 
-        DebitersCreditors curentDebitersCreditors = null;
+        Person curentDebitersCreditors = null;
 
-        public DebitersCreditors CurentDebitersCreditors
+        public Person CurentDebitersCreditors
         {
             get 
             { 
@@ -81,8 +81,8 @@ namespace Group11_Assignment1
             {
                 return newDebitersCreditorsCommand ?? (newDebitersCreditorsCommand = new DelegateCommand(() =>
                 {
-                 var newDebitersCreditors = new DebitersCreditors();
-                    var debitersCreditersView = new DebtorsCreditorsViewModel(DateTime.Now, 0, newDebitersCreditors)
+                 var newDebitersCreditors = new Person();
+                    var debitersCreditersView = new PersonViewModel(DateTime.Now, 0, newDebitersCreditors)
                     {
                         IsDebiterOrCreditor = isDebiterOrCreditor                
                     };
