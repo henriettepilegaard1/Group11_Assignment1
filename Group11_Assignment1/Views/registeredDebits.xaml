@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group11_Assignment1"
         mc:Ignorable="d"
-        Title="registeredDebits" Height="450" Width="800">
+        Title="Transactions" Height="450" Width="531.556">
     <Grid>
-        
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="129,196,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox HorizontalAlignment="Left" Height="319" Margin="33,63,0,0" VerticalAlignment="Top" Width="332" Background="#FFDEDEDE"/>
+        <Label Content="Transactions" HorizontalAlignment="Left" Margin="33,34,0,0" VerticalAlignment="Top" Background="White" Foreground="#DD242424" Width="80"/>
+        <Button Content="Add transaction" HorizontalAlignment="Left" Margin="378,123,0,0" VerticalAlignment="Top" Width="120" Background="#FFC9C9C9" FontFamily="Yu Gothic Medium" FontSize="12"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="378,350,0,0" VerticalAlignment="Top" Width="120" Background="#FFC9C9C9" FontFamily="Yu Gothic Medium" FontSize="12"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="378,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" BorderBrush="#89FFFFFF" Background="#FFE3E3E3"/>
+        <Label Content="Insert value" HorizontalAlignment="Left" Margin="378,63,0,0" VerticalAlignment="Top" Foreground="#DD040404"/>
+
     </Grid>
 </Window>

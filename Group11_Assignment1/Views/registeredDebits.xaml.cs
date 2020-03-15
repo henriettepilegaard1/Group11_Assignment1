@@ -28,5 +28,10 @@ namespace Group11_Assignment1
         {
             DialogResult = true;
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
