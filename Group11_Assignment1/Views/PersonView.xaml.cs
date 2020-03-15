@@ -23,5 +23,10 @@ namespace Group11_Assignment1.Views
         {
             InitializeComponent();
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
