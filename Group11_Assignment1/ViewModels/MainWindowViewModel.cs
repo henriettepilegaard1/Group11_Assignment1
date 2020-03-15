@@ -14,92 +14,107 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using Group11_Assignment1.Views;
 
-namespace Group11_Assignment1
+namespace Group11_Assignment1.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private ObservableCollection<Person> debitersCreditors;
-
+        private ObservableCollection<Person> persons = new ObservableCollection<Person> {};
+        private Person currentPerson = null;
 
         public MainWindowViewModel()
         {
-            debitersCreditors = new ObservableCollection<Person>
-            {
-
-                new Person(),
-                new Person()
-            };
-            CurentDebitersCreditors = null;
-
-            IsDebiterOrCreditor = new ObservableCollection<string>
-            {
-                "Is a debitor",
-                "Is a creditor"
-            };
+            EditPersonCommand = new DelegateCommand(EditPersonCommand_Execute, EditPersonCommand_CanExecute)
+                .ObservesProperty(() => CurrentPerson);
         }
-       
+
         #region Properties
-        public ObservableCollection<Person> Debiters
+        public ObservableCollection<Person> Persons
         {
-            get { return debitersCreditors; }
-            set { SetProperty(ref debitersCreditors, value); }
+            get { return persons; }
+            set { SetProperty(ref persons, value); }
         }
 
-        Person curentDebitersCreditors = null;
-
-        public Person CurentDebitersCreditors
+        public Person CurrentPerson
         {
-            get 
-            { 
-                return CurentDebitersCreditors; 
-            }
-            set
-            {
-                SetProperty(ref curentDebitersCreditors, value);
-            }
-        }
-
-        ObservableCollection<string> isDebiterOrCreditor;
-        public ObservableCollection<string> IsDebiterOrCreditor
-        {
-            get { return isDebiterOrCreditor; }
-            set
-            {
-                SetProperty(ref isDebiterOrCreditor, value);
-            }
+            get => currentPerson;
+            set => SetProperty(ref currentPerson, value);
         }
 
         #endregion
 
         #region commands
-        ICommand newDebitersCreditorsCommand;
-        public ICommand AddDebitersCreditorsCommand
+
+        private bool EditPersonCommand_CanExecute()
+        {
+            return CurrentPerson.IsValid;
+        }
+
+        private void EditPersonCommand_Execute()
+        {
+            
+            var dialog = new PersonView()
+            {
+                DataContext = new PersonViewModel
+                {
+                    Amount = string.Empty,
+                    Person = CurrentPerson,
+                },
+            };
+
+            dialog.ShowDialog();
+        }
+
+        public ICommand EditPersonCommand { get; private set; }
+        
+        ICommand newPersonCommand;
+        public ICommand AddPersonCommand
         {
 
             get
             {
-                return newDebitersCreditorsCommand ?? (newDebitersCreditorsCommand = new DelegateCommand(() =>
+                return newPersonCommand ?? (newPersonCommand = new DelegateCommand(() =>
                 {
-                 var newDebitersCreditors = new Person();
-                    var debitersCreditersView = new PersonViewModel()
+                    var person = new Person();
+                    var personViewModel = new PersonViewModel()
                     {
                                  
                     };
 
                  var dlg = new MainWindow()
                     {
-                        DataContext = debitersCreditersView
+                        DataContext = personViewModel
                     };
                 if (dlg.ShowDialog() == true)
                 {
-                    Debiters.Add(newDebitersCreditors);
-                    CurentDebitersCreditors = newDebitersCreditors;
+                    Persons.Add(person);
+                    CurrentPerson = person;
                 }
                 }));
             }
         }
 
         #endregion
+    }
+
+    public class MainWindowViewModelDesign : MainWindowViewModel
+    {
+        public MainWindowViewModelDesign() : base()
+        {
+            var person = new Person { Name = "Demo 1" };
+            person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-10), Amount = 30 });
+            person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-5), Amount = -750 });
+            person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-2), Amount = 512 });
+            Persons.Add(person);
+
+            person = new Person { Name = "Demo 2" };
+            person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-11), Amount = 330 });
+            person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-3), Amount = -50 });
+            person.AddTransaction(new Transaction { Date = DateTime.Now.AddDays(-1), Amount = 12 });
+            Persons.Add(person);
+
+
+        }
     }
 }
