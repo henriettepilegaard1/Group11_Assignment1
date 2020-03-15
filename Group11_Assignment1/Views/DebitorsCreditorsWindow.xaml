@@ -14,7 +14,6 @@
         </Grid.ColumnDefinitions>
         <Button Name="addButton"
             Content="Add"
-            Click="Add_Click" 
             Margin="376.111,99,143.556,288.667" 
             Grid.Column="2">
         </Button>
