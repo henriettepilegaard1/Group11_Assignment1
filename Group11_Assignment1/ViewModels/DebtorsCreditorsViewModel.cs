@@ -7,10 +7,10 @@ using System.Windows.Input;
 
 namespace Group11_Assignment1.ViewModels 
 {
-    class DebtorsCreditorsView : BindableBase
+    class DebtorsCreditorsViewModel : BindableBase
     {
 
-        public DebtorsCreditorsView(DateTime date, string amount, DebitersCreditors debtersCreditors)
+        public DebtorsCreditorsViewModel(DateTime date, double amount, DebitersCreditors debtersCreditors)
         {
             Date = date;
             Amount = amount;
@@ -33,8 +33,8 @@ namespace Group11_Assignment1.ViewModels
             }
         }
 
-        string amout;
-        public string Amount
+        double amout;
+        public double Amount
         {
             get
             {
