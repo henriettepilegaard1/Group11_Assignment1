@@ -28,5 +28,10 @@ namespace Group11_Assignment1
         {
 
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+                
+        }
     }
 }

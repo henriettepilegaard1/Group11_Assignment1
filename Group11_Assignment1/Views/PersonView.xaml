@@ -13,9 +13,45 @@
     </Window.DataContext>
     <Grid>
         <!-- Transactions View -->
-        <Label Content="Transactions for" HorizontalAlignment="Left" Margin="33,34,0,0" VerticalAlignment="Top" Background="White" Foreground="#DD242424" Width="104"/>
-        <Label Content="{Binding Name}" HorizontalAlignment="Left" Margin="155,34,0,0" VerticalAlignment="Top"  Background="White" Foreground="#DD242424" Width="136" Height="24"/>
-        <DataGrid HeadersVisibility="Column" Background="White" Foreground="#DD242424" ItemsSource="{Binding Path=Transactions}" AutoGenerateColumns="False"  BorderBrush="Black" BorderThickness="2" GridLinesVisibility="All" HorizontalAlignment="Left" Height="319" Margin="33,86,0,0" VerticalAlignment="Top" Width="332" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+        <Label Content="Transactions for" 
+               HorizontalAlignment="Left" 
+               Margin="33,34,0,0" 
+               VerticalAlignment="Top" 
+               Background="White" 
+               Foreground="#DD242424" 
+               Width="104"
+        />
+        
+        <Label Content="{Binding Name}" 
+               HorizontalAlignment="Left" 
+               Margin="155,34,0,0" 
+               VerticalAlignment="Top"  
+               Background="White" 
+               Foreground="#DD242424" 
+               Width="136" 
+               Height="24"
+        />
+
+        <!-- Datagrid shows list of transactions for only one person -->
+        <DataGrid HeadersVisibility="Column" 
+                  Background="White" 
+                  Foreground="#DD242424" 
+                  ItemsSource="{Binding Path=Transactions}" 
+                  AutoGenerateColumns="False"  
+                  
+                  BorderBrush="Black" 
+                  BorderThickness="2" 
+                  GridLinesVisibility="All" 
+                 
+                  HorizontalAlignment="Left" 
+                  Height="319"
+                  Margin="33,86,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="332" 
+                  
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False" 
+                  IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Simple Value" Binding="{Binding Date}" Width="*" />
                 <DataGridTextColumn Header="Flaf" Binding="{Binding Amount}" Width="*" />               
@@ -23,18 +59,63 @@
         </DataGrid>
 
         <!-- Total amount-->
-        <Label Content="Total amount:" HorizontalAlignment="Left" Margin="378,181,0,0" VerticalAlignment="Top" Width="91" Background="White" Foreground="#DD242424"/>
-        <Label Content="{Binding TotalAmount}" HorizontalAlignment="Left" Margin="469,181,0,0" VerticalAlignment="Top" Background="White" Foreground="#DD242424"/>
+        <Label Content="Total amount:" 
+               HorizontalAlignment="Left" 
+               Margin="378,181,0,0" 
+               VerticalAlignment="Top" 
+               Width="91" 
+               Background="White" 
+               Foreground="#DD242424"
+        />
 
-        <!-- Add Transaction Button -->
-        <Label Content="Insert value" HorizontalAlignment="Left" Margin="378,63,0,0" VerticalAlignment="Top" Foreground="#DD040404"/>
-        <TextBox Text="{Binding Amount}" HorizontalAlignment="Left" Height="23" Margin="378,92,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" BorderBrush="#89FFFFFF" Background="#FFE3E3E3"/>
-        <Button Command ="{Binding AddTransActionCommand}" Content="Add transaction" HorizontalAlignment="Left" Margin="378,123,0,0" VerticalAlignment="Top" Width="120" Background="#FFC9C9C9" FontFamily="Yu Gothic Medium" FontSize="12"/>
+        <!-- Label shows total amount. If none, this is 0 -->
+        <Label Content="{Binding TotalAmount}" 
+               HorizontalAlignment="Left" 
+               Margin="469,181,0,0" 
+               VerticalAlignment="Top" 
+               Background="White" 
+               Foreground="#DD242424"
+        />
+
+        <!-- Insert value -->
+        <Label Content="Insert value" 
+               HorizontalAlignment="Left" 
+               Margin="378,63,0,0" 
+               VerticalAlignment="Top" 
+               Foreground="#DD040404"
+        />
+
+        <TextBox Text="{Binding Amount}" 
+                 HorizontalAlignment="Left" 
+                 Height="23" 
+                 Margin="378,92,0,0" 
+                 TextWrapping="Wrap"  
+                 VerticalAlignment="Top" 
+                 Width="120" 
+                 BorderBrush="#89FFFFFF" 
+                 Background="#FFE3E3E3"
+        />
+        <!-- Add transaction button -->
+        <Button Command ="{Binding AddTransActionCommand}" 
+                Content="Add transaction" 
+                HorizontalAlignment="Left" 
+                Margin="378,123,0,0" 
+                VerticalAlignment="Top" 
+                Width="120" 
+                Background="#FFC9C9C9" 
+                FontFamily="Yu Gothic Medium" 
+                FontSize="12"/>
 
         <!-- Close Button -->
-        <Button IsCancel="True" Content="Close" HorizontalAlignment="Left" Margin="378,350,0,0" VerticalAlignment="Top" Width="120" Background="#FFC9C9C9" FontFamily="Yu Gothic Medium" FontSize="12"/>
-        
-
-
+        <Button IsCancel="True" 
+                Content="Close" 
+                HorizontalAlignment="Left" 
+                Margin="378,350,0,0" 
+                VerticalAlignment="Top" 
+                Width="120" 
+                Background="#FFC9C9C9" 
+                FontFamily="Yu Gothic Medium" 
+                FontSize="12"
+        />
     </Grid>
 </Window>
