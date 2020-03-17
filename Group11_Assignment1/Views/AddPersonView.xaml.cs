@@ -23,5 +23,10 @@ namespace Group11_Assignment1.Views
         {
             InitializeComponent();
         }
+
+        private void ButtonSave_Click(Object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
     }
 }
