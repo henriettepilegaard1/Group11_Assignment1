@@ -17,9 +17,11 @@ namespace Group11_Assignment1.ViewModels
         private string newAmount;
         private string newName;
 
-        public AddPersonViewModel() : this(new Person(), String.Empty, String.Empty) { }
+        public AddPersonViewModel() : this(new Person(), String.Empty, String.Empty)
+        {
+        }
 
-        public AddPersonViewModel( Person newPerson, string newName, string newAmount)
+        public AddPersonViewModel(Person newPerson, string newName, string newAmount)
         {
             this.newName = newName;
             this.newPerson = newPerson;
@@ -30,6 +32,7 @@ namespace Group11_Assignment1.ViewModels
                 .ObservesProperty(() => NewAmount);
 
             this.CancelBtnCommand = new DelegateCommand(CancelBtnCommand_Execute);
+
         }
 
         #region Properties
@@ -39,6 +42,8 @@ namespace Group11_Assignment1.ViewModels
             get => newName;
             set => SetProperty(ref newName, value);
         }
+        //Person newPerson;
+
 
         public string NewAmount
         {
@@ -49,7 +54,7 @@ namespace Group11_Assignment1.ViewModels
         public bool IsValid
         {
             get
-            {               
+            {
                 if (String.IsNullOrWhiteSpace(NewName))
                     return false;
                 if (string.IsNullOrWhiteSpace(NewAmount))
@@ -70,6 +75,7 @@ namespace Group11_Assignment1.ViewModels
                 {
                     return false;
                 }
+
                 return true;
             }
         }
@@ -78,7 +84,7 @@ namespace Group11_Assignment1.ViewModels
 
         #region Commands
 
-        public ICommand SaveBtnCommand { get; private set; }        
+        public ICommand SaveBtnCommand { get; private set; }
 
         private void SaveBtnCommand_Execute()
         {
@@ -101,7 +107,7 @@ namespace Group11_Assignment1.ViewModels
         {
             Application.Current.MainWindow.Close();
         }
-        
+
         #endregion
 
     }
@@ -109,8 +115,10 @@ namespace Group11_Assignment1.ViewModels
     public class AddPersonViewModelDesign : AddPersonViewModel
     {
         // Dummy values for deign
-        
-        public AddPersonViewModelDesign() : base(new Person(), "Eigil", "200") { }
+
+        public AddPersonViewModelDesign() : base(new Person(), "Eigil", "200")
+        {
+        }
 
     }
 }

@@ -22,6 +22,7 @@ namespace Group11_Assignment1.ViewModels
     {
         private ObservableCollection<Person> persons = new ObservableCollection<Person> {};
         private Person currentPerson = null;
+        private Person newPerson = null;
 
         public MainWindowViewModel()
         {
@@ -77,6 +78,7 @@ namespace Group11_Assignment1.ViewModels
         private bool AddPersonCommand_CanExecute() => true;
 
         private void AddPersonCommand_Execute()
+
         {
 
             var model = new Person();
