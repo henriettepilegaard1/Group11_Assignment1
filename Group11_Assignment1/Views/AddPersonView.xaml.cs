@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Group11_Assignment1
+namespace Group11_Assignment1.Views
 {
     /// <summary>
-    /// Interaction logic for AddDepter.xaml
+    /// Interaction logic for AddPersonView.xaml
     /// </summary>
-    public partial class AddDepter : Window
+    public partial class AddPersonView : Window
     {
-        public AddDepter()
+        public AddPersonView()
         {
             InitializeComponent();
         }

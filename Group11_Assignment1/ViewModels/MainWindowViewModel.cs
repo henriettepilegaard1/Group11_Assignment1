@@ -80,9 +80,10 @@ namespace Group11_Assignment1.ViewModels
         {
 
             var model = new Person();
+
             var viewmodel = new AddPersonViewModel(model, "", "");
 
-            var view = new AddDepter()
+            var view = new AddPersonView()
             {
                 DataContext = viewmodel
             };
