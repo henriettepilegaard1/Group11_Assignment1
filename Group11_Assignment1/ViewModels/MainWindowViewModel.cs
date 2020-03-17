@@ -28,6 +28,9 @@ namespace Group11_Assignment1.ViewModels
         {
             EditPersonCommand = new DelegateCommand(EditPersonCommand_Execute, EditPersonCommand_CanExecute)
                 .ObservesProperty(() => CurrentPerson);
+
+            AddPersonCommand = new DelegateCommand(AddPersonCommand_Execute, AddPersonCommand_CanExecute);
+            
         }
 
         #region Properties
@@ -69,31 +72,28 @@ namespace Group11_Assignment1.ViewModels
 
         public ICommand EditPersonCommand { get; private set; }
         
+        public ICommand AddPersonCommand { get; private set; }
 
-        ICommand newPersonCommand;
-        public ICommand AddPersonCommand
+
+        private bool AddPersonCommand_CanExecute() => true;
+
+        private void AddPersonCommand_Execute()
+
         {
 
-            get
-            {
-                return newPersonCommand ?? (newPersonCommand = new DelegateCommand(() =>
-                {
-                    var person = new Person();
-                    var addPersonViewModel = new AddPersonViewModel();
-                    {
-                                 
-                    };
+            var model = new Person();
 
-                 var dlg = new MainWindow()
-                    {
-                        DataContext = addPersonViewModel
-                    };
-                if (dlg.ShowDialog() == true)
-                {
-                    Persons.Add(person);
-                    CurrentPerson = person;
-                }
-                }));
+            var viewmodel = new AddPersonViewModel(model, "", "");
+
+            var view = new AddPersonView()
+            {
+                DataContext = viewmodel
+            };
+            
+            if (view.ShowDialog() == true)
+            {
+                Persons.Add(model);
+                CurrentPerson = model;
             }
         }
 
