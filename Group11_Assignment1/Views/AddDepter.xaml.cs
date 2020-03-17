@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Group11_Assignment1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddDepter.xaml
     /// </summary>
-    public partial class debitorsCreditors : Window
+    public partial class AddDepter : Window
     {
-        public debitorsCreditors()
+        public AddDepter()
         {
             InitializeComponent();
         }
