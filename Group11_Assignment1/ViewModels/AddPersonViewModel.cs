@@ -13,30 +13,32 @@ namespace Group11_Assignment1.ViewModels
 {
     public class AddPersonViewModel : BindableBase
     {
-        private Person newPerson;
+        private readonly Person newPerson;
         private string newAmount;
+        private string newName;
 
-        public AddPersonViewModel() : this(new Person(), String.Empty) { }
+        public AddPersonViewModel() : this(new Person(), String.Empty, String.Empty) { }
 
-        public AddPersonViewModel( Person newPerson, string newAmount)
+        public AddPersonViewModel( Person newPerson, string newName, string newAmount)
         {
+            this.newName = newName;
             this.newPerson = newPerson;
             this.newAmount = newAmount;
-             
-            
+
+            this.SaveBtnCommand = new DelegateCommand(SaveBtnCommand_Execute, SaveBtnCommand_CanExecute)
+                .ObservesProperty(() => NewName)
+                .ObservesProperty(() => NewAmount);
+
+            this.CancelBtnCommand = new DelegateCommand(CancelBtnCommand_Execute);
         }
 
         #region Properties
 
-        //Person newPerson;
-
-        public Person NewPerson
+        public string NewName
         {
-            get => newPerson;
-            set => SetProperty(ref newPerson, value);
+            get => newName;
+            set => SetProperty(ref newName, value);
         }
-        public string Name => newPerson.Name;
-        public double Amount => newPerson.Amount;
 
         public string NewAmount
         {
@@ -47,61 +49,68 @@ namespace Group11_Assignment1.ViewModels
         public bool IsValid
         {
             get
-            {
-                IsValid = true;
-                if (String.IsNullOrWhiteSpace(newPerson.Name))
-                    IsValid = false;
-                if (Double.IsNaN(newPerson.Amount))
-                    IsValid = false;
-                return IsValid;
+            {               
+                if (String.IsNullOrWhiteSpace(NewName))
+                    return false;
+                if (string.IsNullOrWhiteSpace(NewAmount))
+                    return false;
+                return IsValidAmount;
             }
-            set => throw new NotImplementedException();
+        }
+
+        private Boolean IsValidAmount
+        {
+            get
+            {
+                try
+                {
+                    Convert.ToDouble(NewAmount);
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+                return true;
+            }
         }
 
         #endregion
 
         #region Commands
 
-        ICommand _saveBtnCommand;
-
-        public ICommand SaveBtnCommand
-        {
-            get
-            {
-                return _saveBtnCommand ?? (_saveBtnCommand = new DelegateCommand(
-                    SaveBtnCommand_Execute, SaveBtnCommand_CanExecute)
-                    .ObservesProperty(() => newPerson.Name)
-                    .ObservesProperty(() => NewPerson.Amount));
-            }
-        }
+        public ICommand SaveBtnCommand { get; private set; }        
 
         private void SaveBtnCommand_Execute()
         {
-            //can be left empty
-        }
+            // Set name on save
+            newPerson.Name = NewName;
 
-
-        private bool SaveBtnCommand_CanExecute()
-        {
-            return IsValid;
-        }
-
-        ICommand _cancelBtnCommand;
-
-        public ICommand CancelBtnCommand
-        {
-            get
+            // Add first transaction on save
+            newPerson.AddTransaction(new Transaction
             {
-                return _cancelBtnCommand ?? (_cancelBtnCommand = new DelegateCommand(() =>
-                {
-                    Application.Current.MainWindow.Close();
-                }));
-            }
+                Date = DateTime.Now,
+                Amount = Convert.ToDouble(NewAmount),
+            });
         }
-    
-    #endregion
 
+        private bool SaveBtnCommand_CanExecute() => IsValid;
 
-}
+        public ICommand CancelBtnCommand { get; private set; }
 
+        private void CancelBtnCommand_Execute()
+        {
+            Application.Current.MainWindow.Close();
+        }
+        
+        #endregion
+
+    }
+
+    public class AddPersonViewModelDesign : AddPersonViewModel
+    {
+        // Dummy values for deign
+        
+        public AddPersonViewModelDesign() : base(new Person(), "Eigil", "200") { }
+
+    }
 }

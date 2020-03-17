@@ -22,7 +22,7 @@ namespace Group11_Assignment1
     {
         public debitorsCreditors()
         {
-
+            InitializeComponent();
         }
     }
 }
