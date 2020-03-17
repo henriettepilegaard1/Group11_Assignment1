@@ -22,6 +22,7 @@ namespace Group11_Assignment1.ViewModels
     {
         private ObservableCollection<Person> persons = new ObservableCollection<Person> {};
         private Person currentPerson = null;
+        private Person newPerson = null;
 
         public MainWindowViewModel()
         {
@@ -68,6 +69,7 @@ namespace Group11_Assignment1.ViewModels
 
         public ICommand EditPersonCommand { get; private set; }
         
+
         ICommand newPersonCommand;
         public ICommand AddPersonCommand
         {
@@ -77,14 +79,14 @@ namespace Group11_Assignment1.ViewModels
                 return newPersonCommand ?? (newPersonCommand = new DelegateCommand(() =>
                 {
                     var person = new Person();
-                    var personViewModel = new PersonViewModel()
+                    var addPersonViewModel = new AddPersonViewModel();
                     {
                                  
                     };
 
                  var dlg = new MainWindow()
                     {
-                        DataContext = personViewModel
+                        DataContext = addPersonViewModel
                     };
                 if (dlg.ShowDialog() == true)
                 {
