@@ -22,7 +22,6 @@ namespace Group11_Assignment1.ViewModels
     {
         private ObservableCollection<Person> persons = new ObservableCollection<Person> {};
         private Person currentPerson = null;
-        private Person newPerson = null;
 
         public MainWindowViewModel()
         {

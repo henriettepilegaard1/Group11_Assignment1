@@ -84,6 +84,7 @@ namespace Group11_Assignment1.ViewModels
                 Date = DateTime.Now
             };
             Person.AddTransaction(transaction);
+            RaisePropertyChanged("TotalAmount");
         }
 
         private bool AddTransActionCommand_CanExecute()

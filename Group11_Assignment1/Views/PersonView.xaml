@@ -53,8 +53,8 @@
                   CanUserDeleteRows="False" 
                   IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Simple Value" Binding="{Binding Date}" Width="*" />
-                <DataGridTextColumn Header="Flaf" Binding="{Binding Amount}" Width="*" />               
+                <DataGridTextColumn Header="Time of transaction" Binding="{Binding Date}" Width="*" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="*" />               
             </DataGrid.Columns>
         </DataGrid>
 
@@ -85,7 +85,7 @@
                Foreground="#DD040404"
         />
 
-        <TextBox Text="{Binding Amount}" 
+        <TextBox Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" 
                  HorizontalAlignment="Left" 
                  Height="23" 
                  Margin="378,92,0,0" 

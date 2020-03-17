@@ -31,7 +31,6 @@ namespace Group11_Assignment1.ViewModels
                 .ObservesProperty(() => NewName)
                 .ObservesProperty(() => NewAmount);
 
-            this.CancelBtnCommand = new DelegateCommand(CancelBtnCommand_Execute);
 
         }
 
@@ -101,12 +100,6 @@ namespace Group11_Assignment1.ViewModels
 
         private bool SaveBtnCommand_CanExecute() => IsValid;
 
-        public ICommand CancelBtnCommand { get; private set; }
-
-        private void CancelBtnCommand_Execute()
-        {
-            Application.Current.MainWindow.Close();
-        }
 
         #endregion
 

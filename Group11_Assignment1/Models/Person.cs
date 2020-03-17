@@ -46,13 +46,13 @@ namespace Group11_Assignment1.Models
         public void AddTransaction(Transaction transaction)
         {
             transactions.Add(transaction);
-            amount += transaction.Amount;
+            Amount += transaction.Amount;
         }
 
         public void RemoveTransaction(Transaction transaction)
         {
             transactions.Remove(transaction);
-            amount -= transaction.Amount;
+            Amount -= transaction.Amount;
         }
 
         public bool IsValid
