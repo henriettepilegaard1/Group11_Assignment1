@@ -93,9 +93,6 @@
     <Compile Include="Views\PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\registeredDebits.xaml.cs">
-      <DependentUpon>registeredDebits.xaml</DependentUpon>
-    </Compile>
     <Page Include="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,10 +106,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\PersonView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\registeredDebits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
